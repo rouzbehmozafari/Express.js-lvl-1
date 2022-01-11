@@ -18,7 +18,7 @@ app.get('/movies/api',(_,res)=>{
 
 app.get('/movies/api/:id',(req,res)=>{
     let id = req.params.id
-    res.json(movies[id])
+    res.json(movies.filter(i=> i.year == id))
 })
 
 // error 404
