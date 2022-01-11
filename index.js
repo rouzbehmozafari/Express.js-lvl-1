@@ -26,11 +26,14 @@ app.get('/',(_,res)=>{
 app.get('/why',(_,res)=>{
         res.sendFile(__dirname + "/public/pages/why.html")
 })
+app.get('/images/pinkVector.png',(_,res)=>{
+        res.sendFile(__dirname + "/public/images/pinkVector.png")
+})
 app.get('/styles/style.css',(_,res)=>{
         res.sendFile(__dirname + "/public/styles/style.css")
 })
-app.get('/images/pinkVector.png',(_,res)=>{
-        res.sendFile(__dirname + "/public/images/pinkVector.png")
+app.use((_,res)=>{
+    res.sendFile(__dirname + '/public/pages/error.html')
 })
 
 
